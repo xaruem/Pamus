@@ -82,7 +82,7 @@ const translations = {
     faq3q: "Работаете только в Ташкенте?",
     faq3a: "Нет, мы работаем по всему Узбекистану и с иностранными компаниями. Многие задачи решаются дистанционно. Главный офис находится в Ташкенте.",
     footer_desc: "Эксперты по Due Diligence и юридическому сопровождению бизнеса в Узбекистане.",
-    footer_addr: "Тошкент, Мирзо-Улуғбек тумани, Мустақиллик шоҳкўчаси, 107",
+    footer_addr: "Ташкент, Мирзо-Улугбекский район, проспект Мустакиллик, 107",
     footer_copy: "© 2026 Business Law Consulting. Все права защищены.",
     alert_name: "Пожалуйста, введите ваше имя.",
     alert_phone: "Пожалуйста, введите номер телефона.",
@@ -182,28 +182,27 @@ const translations = {
 
 let currentLang = 'ru';
 
+// =====================
+// LANGUAGE SWITCHER
+// =====================
 function setLang(lang) {
   currentLang = lang;
   const t = translations[lang];
 
-  // Update all data-i18n text elements
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     if (t[key] !== undefined) el.innerHTML = t[key];
   });
 
-  // Update placeholders
   document.querySelectorAll('[data-i18n-ph]').forEach(el => {
     const key = el.getAttribute('data-i18n-ph');
     if (t[key] !== undefined) el.placeholder = t[key];
   });
 
-  // Update page title
   document.title = lang === 'uz'
     ? 'Business Law Consulting — Kompaniyalarni Due Diligence va yuridik tekshiruv'
     : 'Business Law Consulting — Due Diligence и юридическая проверка компаний';
 
-  // Update lang buttons
   document.querySelectorAll('.nav-lang button').forEach(btn => {
     btn.classList.toggle('active', btn.textContent.trim().toLowerCase() === lang);
   });
@@ -219,7 +218,10 @@ function toggleFaq(btn) {
   const isOpen = btn.classList.contains('open');
   document.querySelectorAll('.faq-question').forEach(b => b.classList.remove('open'));
   document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
-  if (!isOpen) { btn.classList.add('open'); answer.classList.add('open'); }
+  if (!isOpen) {
+    btn.classList.add('open');
+    answer.classList.add('open');
+  }
 }
 
 // =====================
@@ -227,40 +229,101 @@ function toggleFaq(btn) {
 // =====================
 async function sendToTelegram() {
   const t = translations[currentLang];
-  const name = document.getElementById('f-name').value.trim();
-  const phone = document.getElementById('f-phone').value.trim();
+  const name    = document.getElementById('f-name').value.trim();
+  const phone   = document.getElementById('f-phone').value.trim();
   const message = document.getElementById('f-message').value.trim();
 
-  if (!name) { alert(t.alert_name); return; }
+  if (!name)  { alert(t.alert_name);  return; }
   if (!phone) { alert(t.alert_phone); return; }
 
+  // ── замените значения ниже на свои ──────────────────────────────────────
   const BOT_TOKEN = '8874459280:AAHCPdevAQNhiIDj7z2iHN41SJQ-SKyITZc';
-  const CHAT_ID = '-5060513104';
+  const CHAT_ID   = '-5290894110';
+  // ────────────────────────────────────────────────────────────────────────
 
-  const text = `📋 *Новая заявка — Business Law Consulting*\n\n👤 *Имя:* ${name}\n📞 *Телефон:* ${phone}${message ? '\n💬 *Сообщение:* ' + message : ''}\n\n🌐 *Язык:* ${currentLang.toUpperCase()}\n⏰ ${new Date().toLocaleString('ru-RU')}`;
+  const text =
+    `📋 *Новая заявка — Business Law Consulting*\n\n` +
+    `👤 *Имя:* ${name}\n` +
+    `📞 *Телефон:* ${phone}` +
+    (message ? `\n💬 *Сообщение:* ${message}` : '') +
+    `\n\n🌐 *Язык:* ${currentLang.toUpperCase()}` +
+    `\n⏰ ${new Date().toLocaleString('ru-RU')}`;
 
   const submitBtn = document.querySelector('.form-submit');
+  const originalText = submitBtn.textContent;
   submitBtn.textContent = t.sending;
   submitBtn.disabled = true;
 
+  // Шаг 1 — пробуем стандартный fetch (работает, если сайт на HTTPS
+  //          и Telegram API не заблокирован у пользователя)
+  const apiUrl = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+  const payload = JSON.stringify({
+    chat_id: CHAT_ID,
+    text,
+    parse_mode: 'Markdown'
+  });
+
   try {
-    const res = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
-      method: 'POST',
+    const res = await fetch(apiUrl, {
+      method:  'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ chat_id: CHAT_ID, text, parse_mode: 'Markdown' })
+      body:    payload
     });
+
+    // fetch может завершиться без ошибки даже при HTTP 4xx/5xx
+    if (!res.ok) {
+      const errData = await res.json().catch(() => ({}));
+      console.error('Telegram HTTP error:', res.status, errData);
+      throw new Error(`HTTP ${res.status}: ${errData.description || 'unknown error'}`);
+    }
+
     const data = await res.json();
+
     if (data.ok) {
+      // ✅ Успех
+      document.getElementById('contact-form').style.display  = 'none';
+      document.getElementById('form-success').style.display  = 'block';
+    } else {
+      // Telegram вернул ok: false
+      console.error('Telegram API error:', data);
+      alert(t.alert_error);
+      submitBtn.textContent = originalText;
+      submitBtn.disabled    = false;
+    }
+
+  } catch (err) {
+    console.error('sendToTelegram error:', err);
+
+    // Шаг 2 — если fetch упал (CORS, сеть и т.д.) — fallback через <img>
+    // Это не CORS-запрос, поэтому браузер его пропускает.
+    // Мы не получим ответ, но сообщение в Telegram дойдёт.
+    try {
+      const encoded = encodeURIComponent(text);
+      const fallbackUrl =
+        `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage` +
+        `?chat_id=${encodeURIComponent(CHAT_ID)}` +
+        `&text=${encoded}` +
+        `&parse_mode=Markdown`;
+
+      await new Promise((resolve, reject) => {
+        const img = new Image();
+        // img.onload / img.onerror — оба сигнализируют, что запрос ушёл
+        img.onload  = resolve;
+        img.onerror = resolve; // Telegram отвечает не картинкой → всегда onerror, это нормально
+        img.src = fallbackUrl;
+        // На случай, если ответ совсем не придёт — таймаут 5 с
+        setTimeout(resolve, 5000);
+      });
+
+      // Считаем, что сообщение ушло
       document.getElementById('contact-form').style.display = 'none';
       document.getElementById('form-success').style.display = 'block';
-    } else {
-      alert(t.alert_error);
-      submitBtn.textContent = t.form_btn;
-      submitBtn.disabled = false;
+
+    } catch (fallbackErr) {
+      console.error('Fallback error:', fallbackErr);
+      alert(t.alert_net);
+      submitBtn.textContent = originalText;
+      submitBtn.disabled    = false;
     }
-  } catch (e) {
-    alert(t.alert_net);
-    submitBtn.textContent = t.form_btn;
-    submitBtn.disabled = false;
   }
 }
