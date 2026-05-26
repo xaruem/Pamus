@@ -235,7 +235,7 @@ async function sendToTelegram() {
   if (!phone) { alert(t.alert_phone); return; }
 
   const BOT_TOKEN = '8874459280:AAHCPdevAQNhiIDj7z2iHN41SJQ-SKyITZc';
-  const CHAT_ID = '-1003912055531';
+  const CHAT_ID = '-5060513104';
 
   const text = `📋 *Новая заявка — Business Law Consulting*\n\n👤 *Имя:* ${name}\n📞 *Телефон:* ${phone}${message ? '\n💬 *Сообщение:* ' + message : ''}\n\n🌐 *Язык:* ${currentLang.toUpperCase()}\n⏰ ${new Date().toLocaleString('ru-RU')}`;
 
