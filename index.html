@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Law Consulting — Due Diligence и юридическая проверка компаний</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-icon">
+      <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="2" width="24" height="24" rx="3" stroke="#7a9ab8" stroke-width="1.5"/>
+        <line x1="6" y1="8" x2="22" y2="8" stroke="#e8a020" stroke-width="1.5"/>
+        <line x1="6" y1="12" x2="22" y2="12" stroke="#7a9ab8" stroke-width="1.2"/>
+        <line x1="6" y1="16" x2="18" y2="16" stroke="#7a9ab8" stroke-width="1.2"/>
+        <line x1="6" y1="20" x2="14" y2="20" stroke="#7a9ab8" stroke-width="1.2"/>
+      </svg>
+    </div>
+    <div class="nav-logo-text">BUSINESS LAW<br>CONSULTING</div>
+  </div>
+  <div class="nav-right">
+    <a href="tel:+998908884466" class="nav-phone">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      +998 90 888-44-66
+    </a>
+    <button class="nav-icon-btn green" onclick="window.open('https://wa.me/998908884466','_blank')">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </button>
+    <button class="nav-icon-btn blue" onclick="window.open('https://t.me/BLC_law_firm_uz','_blank')">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+    </button>
+    <div class="nav-lang">
+      <button class="active" onclick="setLang('ru')">RU</button>
+      <button onclick="setLang('uz')">UZ</button>
+    </div>
+    <button class="nav-consult-btn" data-i18n="nav_consult" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Консультация</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span data-i18n="hero_badge">Юридические услуги в Узбекистане</span>
+      </div>
+      <div class="hero-brand">BUSINESS LAW CONSULTING</div>
+      <div class="hero-sub" data-i18n="hero_sub">LAW FIRM / АДВОКАТСКАЯ ФИРМА</div>
+      <h1 class="hero-title" data-i18n="hero_title">Due Diligence и юридическая проверка компаний</h1>
+      <p class="hero-desc" data-i18n="hero_desc">Комплексная проверка компаний, контрагентов и бизнес-партнёров в Узбекистане перед сделкой, инвестицией и долгосрочным сотрудничеством. Выявляем юридические, налоговые, корпоративные и судебные риски.</p>
+      <div class="hero-btns">
+        <button class="btn-primary" data-i18n="hero_btn1" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Получить консультацию</button>
+        <button class="btn-secondary" onclick="window.location.href='tel:+998908884466'">+998 90 888-44-66</button>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-card"><div class="hero-card-check"><svg viewBox="0 0 12 12" fill="none" stroke-width="2.5"><polyline points="2,6 5,9 10,3"/></svg></div><span data-i18n="hc1">Due Diligence компаний и контрагентов</span></div>
+      <div class="hero-card"><div class="hero-card-check"><svg viewBox="0 0 12 12" fill="none" stroke-width="2.5"><polyline points="2,6 5,9 10,3"/></svg></div><span data-i18n="hc2">Проверка налоговых и судебных рисков</span></div>
+      <div class="hero-card"><div class="hero-card-check"><svg viewBox="0 0 12 12" fill="none" stroke-width="2.5"><polyline points="2,6 5,9 10,3"/></svg></div><span data-i18n="hc3">Анализ корпоративной структуры бизнеса</span></div>
+      <div class="hero-card"><div class="hero-card-check"><svg viewBox="0 0 12 12" fill="none" stroke-width="2.5"><polyline points="2,6 5,9 10,3"/></svg></div><span data-i18n="hc4">Проверка перед инвестициями и покупкой бизнеса</span></div>
+      <div class="hero-card"><div class="hero-card-check"><svg viewBox="0 0 12 12" fill="none" stroke-width="2.5"><polyline points="2,6 5,9 10,3"/></svg></div><span data-i18n="hc5">Оценка договорных и финансовых рисков</span></div>
+      <div class="hero-card"><div class="hero-card-check"><svg viewBox="0 0 12 12" fill="none" stroke-width="2.5"><polyline points="2,6 5,9 10,3"/></svg></div><span data-i18n="hc6">Подготовка юридического заключения</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHECK -->
+<section class="why-check">
+  <div class="section-inner">
+    <h2 class="section-title" data-i18n="why_title">Зачем нужна проверка?</h2>
+    <p class="section-sub" data-i18n="why_sub">Отсутствие предварительной проверки бизнеса может привести к серьёзным финансовым и юридическим последствиям.</p>
+    <div class="risks-grid">
+      <div class="risk-card"><div class="risk-icon">⚠️</div><p data-i18n="r1">Скрытые налоговые задолженности</p></div>
+      <div class="risk-card"><div class="risk-icon">⚠️</div><p data-i18n="r2">Судебные споры и исполнительные производства</p></div>
+      <div class="risk-card"><div class="risk-icon">⚠️</div><p data-i18n="r3">Недостоверные сведения о компании</p></div>
+      <div class="risk-card"><div class="risk-icon">⚠️</div><p data-i18n="r4">Признаки фиктивной деятельности</p></div>
+      <div class="risk-card"><div class="risk-icon">⚠️</div><p data-i18n="r5">Корпоративные конфликты между учредителями</p></div>
+      <div class="risk-card"><div class="risk-icon">⚠️</div><p data-i18n="r6">Мошеннические схемы</p></div>
+      <div class="risk-card"><div class="risk-icon">⚠️</div><p data-i18n="r7">Риск недействительности сделок</p></div>
+      <div class="risk-card"><div class="risk-icon">⚠️</div><p data-i18n="r8">Финансовые потери и блокировка проектов</p></div>
+      <div class="risk-card"><div class="risk-icon">⚠️</div><p data-i18n="r9">Платёжеспособность и состояние банкротства компании</p></div>
+    </div>
+    <p class="risks-footer"><strong>Due Diligence</strong> <span data-i18n="why_footer">помогает заранее выявить риски и принять безопасное решение.</span></p>
+  </div>
+</section>
+
+<!-- WHAT INCLUDES -->
+<section>
+  <div class="section-inner">
+    <h2 class="section-title" data-i18n="inc_title">Что включает Due Diligence?</h2>
+    <p class="section-sub" data-i18n="inc_sub">Комплексная юридическая проверка бизнеса и контрагентов с анализом ключевых рисков.</p>
+    <div class="includes-grid">
+      <div class="include-card">
+        <div class="include-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 12h6M9 8h6M9 16h4"/></svg></div>
+        <h3 data-i18n="inc1">Проверка юридического лица</h3>
+      </div>
+      <div class="include-card">
+        <div class="include-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></div>
+        <h3 data-i18n="inc2">Анализ регистрационных и корпоративных документов</h3>
+      </div>
+      <div class="include-card">
+        <div class="include-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <h3 data-i18n="inc3">Проверка учредителей и руководства</h3>
+      </div>
+      <div class="include-card">
+        <div class="include-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <h3 data-i18n="inc4">Проверка налоговых задолженностей</h3>
+      </div>
+      <div class="include-card">
+        <div class="include-icon"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0zM12 9v4M12 17h.01"/></svg></div>
+        <h3 data-i18n="inc5">Анализ судебных споров и исков</h3>
+      </div>
+      <div class="include-card">
+        <div class="include-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
+        <h3 data-i18n="inc6">Проверка договорной и коммерческой деятельности</h3>
+      </div>
+      <div class="include-card">
+        <div class="include-icon"><svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg></div>
+        <h3 data-i18n="inc7">Анализ лицензий и разрешительных документов</h3>
+      </div>
+      <div class="include-card">
+        <div class="include-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div>
+        <h3 data-i18n="inc8">Проверка рисков перед сделкой или инвестицией</h3>
+      </div>
+      <div class="include-card">
+        <div class="include-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3 data-i18n="inc9">Подготовка итогового юридического заключения</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-us">
+  <div class="section-inner">
+    <h2 class="section-title" data-i18n="whyus_title">Почему выбирают нас?</h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div>
+        <h3 data-i18n="wu1h">10+ лет опыта</h3><p data-i18n="wu1p">Практика юридического сопровождения бизнеса</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <h3 data-i18n="wu2h">Команда адвокатов</h3><p data-i18n="wu2p">Корпоративные юристы и адвокаты</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
+        <h3 data-i18n="wu3h">Международные проекты</h3><p data-i18n="wu3p">Локальный и международный опыт</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3 data-i18n="wu4h">Комплексный подход</h3><p data-i18n="wu4p">Всесторонняя оценка рисков</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+        <h3 data-i18n="wu5h">Конфиденциальность</h3><p data-i18n="wu5p">Полная защита информации</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
+        <h3 data-i18n="wu6h">Понимание бизнеса</h3><p data-i18n="wu6p">Эксперты в коммерческих процессах</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE WORK -->
+<section>
+  <div class="section-inner">
+    <h2 class="section-title" data-i18n="how_title">Как мы работаем?</h2>
+    <div class="steps-grid">
+      <div class="step-card"><div class="step-num">01</div><h3 data-i18n="s1h">Получение данных</h3><p data-i18n="s1p">Изучаем задачу клиента, структуру сделки и документы.</p></div>
+      <div class="step-card"><div class="step-num">02</div><h3 data-i18n="s2h">Юридическая проверка</h3><p data-i18n="s2p">Анализируем корпоративные, договорные, налоговые и судебные данные.</p></div>
+      <div class="step-card"><div class="step-num">03</div><h3 data-i18n="s3h">Оценка рисков</h3><p data-i18n="s3p">Выявляем риски, влияющие на сделку или сотрудничество.</p></div>
+      <div class="step-card"><div class="step-num">04</div><h3 data-i18n="s4h">Подготовка заключения</h3><p data-i18n="s4p">Готовим подробное юридическое заключение с рекомендациями.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IT SUITS -->
+<section class="who-suits">
+  <div class="section-inner">
+    <h2 class="section-title" data-i18n="who_title">Кому подойдёт услуга?</h2>
+    <p class="section-sub" data-i18n="who_sub">Услуга Due Diligence особенно актуальна для:</p>
+    <div class="tags-wrap">
+      <span class="tag" data-i18n="t1">Инвесторов</span>
+      <span class="tag" data-i18n="t2">Владельцев бизнеса</span>
+      <span class="tag" data-i18n="t3">Иностранных компаний</span>
+      <span class="tag" data-i18n="t4">Импортно-экспортных организаций</span>
+      <span class="tag" data-i18n="t5">IT и технологических компаний</span>
+      <span class="tag" data-i18n="t6">Производственных предприятий</span>
+      <span class="tag" data-i18n="t7">Стартапов</span>
+      <span class="tag" data-i18n="t8">Компаний перед M&amp;A сделками</span>
+    </div>
+  </div>
+</section>
+
+<!-- WHEN IMPORTANT -->
+<section>
+  <div class="section-inner">
+    <h2 class="section-title" data-i18n="when_title">Когда проверка особенно важна?</h2>
+    <p class="section-sub" data-i18n="when_sub">Проведение Due Diligence рекомендуется:</p>
+    <div class="when-grid">
+      <div class="when-card"><div class="when-dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span data-i18n="w1">Перед подписанием договора</span></div>
+      <div class="when-card"><div class="when-dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span data-i18n="w2">Перед инвестицией в проект</span></div>
+      <div class="when-card"><div class="when-dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span data-i18n="w3">Перед покупкой доли или бизнеса</span></div>
+      <div class="when-card"><div class="when-dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span data-i18n="w4">Перед международной сделкой</span></div>
+      <div class="when-card"><div class="when-dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span data-i18n="w5">Перед крупной поставкой товара</span></div>
+      <div class="when-card"><div class="when-dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span data-i18n="w6">Перед долгосрочным сотрудничеством</span></div>
+      <div class="when-card"><div class="when-dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span data-i18n="w7">Перед совместным проектом или JV</span></div>
+      <div class="when-card"><div class="when-dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span data-i18n="w8">При привлечении инвесторов</span></div>
+      <div class="when-card when-single"><div class="when-dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span data-i18n="w9">При покупке бизнес-активов или недвижимости</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section style="background:#f5f7fa;">
+  <div class="section-inner">
+    <h2 class="section-title" data-i18n="cl_title">Доверие и опыт</h2>
+    <p class="section-sub" data-i18n="cl_sub">Компании и бренды, с которыми мы сотрудничали по юридическим услугам:</p>
+    <div class="clients-grid">
+      <div class="client-card">AVOBANK</div>
+      <div class="client-card">OLCHA SAVDO</div>
+      <div class="client-card">OSON</div>
+      <div class="client-card">TEGEN</div>
+      <div class="client-card">WORLEYPARSONS</div>
+      <div class="client-card">ANFA PHARMACEUTICAL</div>
+      <div class="client-card">IMAN HALAL INVESTMENTS</div>
+      <div class="client-card">BEK CORP</div>
+      <div class="client-card">SQB TESTING AND RND CENTER</div>
+      <div class="client-card">BREWMASTER</div>
+      <div class="client-card">GASSTREAM</div>
+      <div class="client-card">DENMED TECHNOLOGY</div>
+      <div class="client-card">MEDITERRA</div>
+      <div class="client-card">EZMIR GROUP</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FORM -->
+<section class="cta-section" id="contact">
+  <div class="cta-inner">
+    <h2 class="cta-title" data-i18n="cta_title">Нужно проверить компанию или контрагента?</h2>
+    <p class="cta-sub" data-i18n="cta_sub">Проведём профессиональный Due Diligence, выявим скрытые риски и подготовим юридическое заключение для безопасных решений.</p>
+    <div class="cta-form-box">
+      <h3 class="cta-form-title" data-i18n="form_title">Оставьте заявку</h3>
+      <div id="contact-form">
+        <div class="form-group">
+          <label class="form-label"><span data-i18n="form_name">Ваше имя</span> <span style="color:#e84040">*</span></label>
+          <input type="text" class="form-input" id="f-name" data-i18n-ph="form_name_ph" placeholder="Ваше имя">
+        </div>
+        <div class="form-group">
+          <label class="form-label"><span data-i18n="form_phone">Номер телефона</span> <span style="color:#e84040">*</span></label>
+          <input type="text" class="form-input" id="f-phone" placeholder="+998 XX XXX-XX-XX">
+          <p class="form-hint" data-i18n="form_hint">Формат: +998 XX XXX-XX-XX (введите полностью)</p>
+        </div>
+        <div class="form-group">
+          <label class="form-label" data-i18n="form_msg">Сообщение (необязательно)</label>
+          <textarea class="form-textarea" id="f-message" data-i18n-ph="form_msg_ph" placeholder="Кратко опишите задачу..."></textarea>
+        </div>
+        <button class="form-submit" data-i18n="form_btn" onclick="sendToTelegram()">Отправить</button>
+        <p class="form-note" data-i18n="form_note">Нажимая кнопку, вы соглашаетесь на обработку ваших данных.</p>
+      </div>
+      <div id="form-success" data-i18n="form_success">✅ Ваша заявка принята! Мы свяжемся с вами в ближайшее время.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="section-inner">
+    <h2 class="section-title" data-i18n="faq_title">Часто задаваемые вопросы</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question open" onclick="toggleFaq(this)">
+          <span data-i18n="faq1q">Можно ли проверить компанию перед сделкой?</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+        </button>
+        <div class="faq-answer open" data-i18n="faq1a">Да, мы проводим Due Diligence перед началом сотрудничества.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span data-i18n="faq2q">Проверяете ли налоговые задолженности?</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+        </button>
+        <div class="faq-answer" data-i18n="faq2a">Да, проверка налоговых задолженностей и задолженностей перед госорганами является обязательной частью нашего Due Diligence. Мы анализируем все доступные реестры и базы данных.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span data-i18n="faq3q">Работаете только в Ташкенте?</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+        </button>
+        <div class="faq-answer" data-i18n="faq3a">Нет, мы работаем по всему Узбекистану и с иностранными компаниями. Многие задачи решаются дистанционно. Главный офис находится в Ташкенте.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-icon">
+            <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" width="28" height="28">
+              <rect x="2" y="2" width="24" height="24" rx="3" stroke="#7a9ab8" stroke-width="1.5"/>
+              <line x1="6" y1="8" x2="22" y2="8" stroke="#e8a020" stroke-width="1.5"/>
+              <line x1="6" y1="12" x2="22" y2="12" stroke="#7a9ab8" stroke-width="1.2"/>
+              <line x1="6" y1="16" x2="18" y2="16" stroke="#7a9ab8" stroke-width="1.2"/>
+            </svg>
+          </div>
+          <div class="footer-logo-text">BUSINESS LAW<br>CONSULTING</div>
+        </div>
+        <p data-i18n="footer_desc">Эксперты по Due Diligence и юридическому сопровождению бизнеса в Узбекистане.</p>
+      </div>
+      <div class="footer-contacts">
+        <div class="footer-contact">
+          <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span data-i18n="footer_addr">Ташкент, Мирзо-Улугбекский район, проспект Мустакиллик, 107</span>
+        </div>
+        <div class="footer-contact">
+          <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72 12 12 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          +998 90 888-44-66
+        </div>
+        <div class="footer-contact">
+          <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+          WhatsApp
+        </div>
+        <div class="footer-contact">
+          <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M21.198 2.433a2.242 2.242 0 00-1.022.215l-17 7.999c-.959.451-.956 1.811.001 2.261l3.819 1.833 1.947 6.081c.217.676 1.078.83 1.51.28l2.667-3.334 4.279 3.162c.531.392 1.28.087 1.41-.553l3.2-16c.175-.858-.638-1.583-1.811-.944z"/></svg>
+          @BLC_law_firm_uz
+        </div>
+        <div class="footer-contact">
+          <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          info@businessconsult.uz
+        </div>
+        <div class="footer-contact">
+          <svg viewBox="0 0 24 24" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          businessconsult.uz
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom" data-i18n="footer_copy">© 2026 Business Law Consulting. Все права защищены.</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
