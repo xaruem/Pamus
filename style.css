@@ -160,7 +160,6 @@ header {
 /* HERO */
 .hero {
   background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 40%, #1e3a5a 100%);
-  min-height: calc(100vh - 68px);
   display: flex;
   align-items: center;
   padding: 60px 24px;
