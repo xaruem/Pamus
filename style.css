@@ -1,24 +1,24 @@
-/* ============================================================
-   BUSINESS LAW CONSULTING — UNIVERSAL STYLE
-   Работает для всех 5 страниц сайта
-   ============================================================ */
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap');
-
 :root {
-  --navy:       #1a2b47;
-  --navy-dark:  #0f1d32;
-  --navy-mid:   #1e3354;
-  --gold:       #d4930a;
+  --navy: #1a2b47;
+  --navy-dark: #0f1d32;
+  --navy-mid: #1e3354;
+  --gold: #d4930a;
   --gold-light: #e8a915;
-  --white:      #ffffff;
-  --light-bg:   #f0f2f5;
-  --text-dark:  #1a2b47;
-  --text-gray:  #555;
-  --border:     #e0e4ea;
+  --gold-btn: #c8880a;
+  --teal: #1a7a6e;
+  --white: #ffffff;
+  --light-bg: #f0f2f5;
+  --text-dark: #1a2b47;
+  --text-gray: #555;
+  --border: #e0e4ea;
+  --card-bg: #ffffff;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -27,12 +27,8 @@ body {
   overflow-x: hidden;
 }
 
-/* ============================================================
-   HEADER / NAV  — единый для всех страниц
-   Соответствует скриншотам: logo | phone | WA | TG | RU/UZ | Консультация
-   ============================================================ */
-
-header, nav {
+/* ЗАГОЛОВОК */
+header {
   background: #fff;
   border-bottom: 1px solid var(--border);
   position: sticky;
@@ -41,9 +37,7 @@ header, nav {
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
-/* Внутренний контейнер — одинаков для <header> и <nav> */
-.header-inner,
-nav {
+.header-inner {
   max-width: 1300px;
   margin: 0 auto;
   padding: 0 24px;
@@ -54,16 +48,7 @@ nav {
   gap: 16px;
 }
 
-/* Когда nav сам является flex-контейнером (второй сайт) */
-nav {
-  max-width: 100%;
-  position: fixed;
-  top: 0; left: 0; right: 0;
-}
-
-/* ---- Логотип ---- */
-.logo,
-.nav-logo {
+.logo {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -71,15 +56,12 @@ nav {
   flex-shrink: 0;
 }
 
-.logo-icon,
-.nav-logo img {
+.logo-icon {
   width: 44px;
   height: 44px;
-  object-fit: contain;
 }
 
-.logo-text,
-.nav-logo-text {
+.logo-text {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 13px;
@@ -89,21 +71,13 @@ nav {
   letter-spacing: 0.5px;
 }
 
-/* Скрываем дублирующие блоки внутри nav-logo второго сайта */
-.nav-logo .header-inner { display: contents; }
-.nav-logo .logo { text-decoration: none; }
-
-/* ---- Правая часть хедера ---- */
-.header-right,
-.nav-right {
+.header-right {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-/* ---- Телефон ---- */
-.header-phone,
-.nav-phone {
+.header-phone {
   display: flex;
   align-items: center;
   gap: 6px;
@@ -115,17 +89,11 @@ nav {
   white-space: nowrap;
 }
 
-.header-phone svg,
-.nav-phone svg {
-  width: 16px;
-  height: 16px;
-  stroke: var(--navy);
-  fill: none;
+.header-phone svg {
+  color: var(--navy);
 }
 
-/* ---- Кнопки соцсетей ---- */
-.social-btn,
-.nav-icon-btn {
+.social-btn {
   width: 38px;
   height: 38px;
   border-radius: 50%;
@@ -133,57 +101,44 @@ nav {
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  border: none;
-  cursor: pointer;
   flex-shrink: 0;
 }
 
-.social-btn.wa,
-.nav-icon-btn.green { background: #25d366; }
-
-.social-btn.tg,
-.nav-icon-btn.blue  { background: #0088cc; }
-
-.social-btn svg,
-.nav-icon-btn svg {
-  width: 20px;
-  height: 20px;
-  fill: #fff;
+.social-btn.wa {
+  background: #25d366;
 }
 
-/* ---- Переключатель языков ---- */
-.lang-switcher,
-.nav-lang {
+.social-btn.tg {
+  background: #0088cc;
+}
+
+.lang-switcher {
   display: flex;
   align-items: center;
   gap: 4px;
   font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
 }
 
-.lang-btn,
-.nav-lang button {
-  padding: 4px 8px;
+.lang-btn {
+  padding: 4px 6px;
   border-radius: 4px;
   cursor: pointer;
-  border: 1px solid var(--border);
+  border: none;
   background: transparent;
-  font-family: 'Montserrat', sans-serif;
+  font-family: inherit;
   font-weight: 600;
   font-size: 13px;
   color: var(--text-dark);
-  transition: background 0.2s, color 0.2s;
 }
 
-.lang-btn.active,
-.nav-lang button.active {
+.lang-btn.active {
   background: var(--navy);
   color: #fff;
-  border-color: var(--navy);
 }
 
-/* ---- Кнопка «Консультация» ---- */
-.btn-consult,
-.nav-consult-btn {
+.btn-consult {
   background: var(--gold);
   color: #fff;
   font-family: 'Montserrat', sans-serif;
@@ -198,30 +153,19 @@ nav {
   transition: background 0.2s;
 }
 
-.btn-consult:hover,
-.nav-consult-btn:hover { background: var(--gold-light); }
-
-/* Бургер — скрыт на всех экранах (навигация всегда inline) */
-.nav-burger { display: none !important; }
-
-/* ============================================================
-   HERO — общие стили (тёмный градиентный фон)
-   ============================================================ */
-
-.hero {
-  background: linear-gradient(135deg, #0a1628 0%, #0f2a4a 50%, #1a3a5c 100%);
-  min-height: 100vh;
-  height: 100vh;
-  padding: 120px 60px 80px;
-  display: flex;
-  align-items: center;
-  box-sizing: border-box;
+.btn-consult:hover {
+  background: var(--gold-light);
 }
 
-/* Для сайтов с nav fixed — компенсируем отступ */
-body:has(nav[style*="fixed"]) .hero,
-body:has(nav.fixed) .hero {
-  padding-top: 120px;
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 40%, #1e3a5a 100%);
+  min-height: calc(100vh - 68px);
+  display: flex;
+  align-items: center;
+  padding: 60px 24px;
+  position: relative;
+  overflow: hidden;
 }
 
 .hero::before {
@@ -229,7 +173,6 @@ body:has(nav.fixed) .hero {
   position: absolute;
   inset: 0;
   background: radial-gradient(ellipse at 70% 50%, rgba(30,60,100,0.5) 0%, transparent 60%);
-  pointer-events: none;
 }
 
 .hero-inner {
@@ -244,32 +187,16 @@ body:has(nav.fixed) .hero {
   z-index: 1;
 }
 
-/* Левая колонка Hero */
-.hero-left { order: 1; }
-
-.hero-brand,
-.hero-title-big {
+.hero-title {
   font-family: 'Montserrat', sans-serif;
   font-weight: 900;
-  font-size: 52px;
+  font-size: 56px;
   line-height: 1.05;
   color: var(--gold);
   text-transform: uppercase;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
-/* Для первого сайта — .hero-title как большой заголовок бренда */
-.hero .hero-title:not(h1) {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 900;
-  font-size: 52px;
-  line-height: 1.05;
-  color: var(--gold);
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-
-.hero-sub,
 .hero-subtitle-label {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
@@ -289,15 +216,11 @@ body:has(nav.fixed) .hero {
   border-radius: 20px;
   padding: 8px 16px;
   color: #fff;
-  font-size: 13px;
-  margin-bottom: 24px;
+  font-size: 14px;
+  margin-bottom: 28px;
 }
 
-.hero-badge svg { width: 14px; height: 14px; flex-shrink: 0; }
-
-/* h1 внутри hero */
-.hero h1,
-.hero .hero-heading {
+.hero-heading {
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
   font-size: 28px;
@@ -306,26 +229,18 @@ body:has(nav.fixed) .hero {
   margin-bottom: 16px;
 }
 
-/* Для второго сайта — большой h1 */
-.hero-title[data-i18n] {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 800;
-  font-size: 48px;
-  color: #fff;
-  line-height: 1.15;
-  margin-bottom: 20px;
-}
-
 .hero-desc {
   color: #94b4cc;
   font-size: 15px;
   line-height: 1.7;
   margin-bottom: 32px;
-  max-width: 540px;
 }
 
-/* Кнопки Hero */
-.hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+.hero-btns {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
 
 .btn-primary {
   background: var(--gold);
@@ -340,9 +255,11 @@ body:has(nav.fixed) .hero {
   text-decoration: none;
   transition: background 0.2s;
 }
-.btn-primary:hover { background: var(--gold-light); }
 
-.btn-secondary,
+.btn-primary:hover {
+  background: var(--gold-light);
+}
+
 .btn-outline {
   background: transparent;
   color: #fff;
@@ -356,20 +273,18 @@ body:has(nav.fixed) .hero {
   text-decoration: none;
   transition: border-color 0.2s;
 }
-.btn-secondary:hover,
-.btn-outline:hover { border-color: #fff; }
 
-/* Правая колонка Hero — карточки */
-.hero-features,
-.hero-right {
+.btn-outline:hover {
+  border-color: #fff;
+}
+
+.hero-features {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
-  order: 2;
 }
 
-.hero-feat,
-.hero-card {
+.hero-feat {
   background: rgba(255,255,255,0.08);
   border: 1px solid rgba(255,255,255,0.15);
   border-radius: 10px;
@@ -383,26 +298,10 @@ body:has(nav.fixed) .hero {
   gap: 10px;
 }
 
-.hero-feat svg { flex-shrink: 0; margin-top: 2px; }
-
-/* Чекбокс в hero-card (второй сайт) */
-.hero-card-check {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  border: 2px solid var(--gold);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.hero-feat svg {
   flex-shrink: 0;
   margin-top: 2px;
 }
-.hero-card-check svg { width: 12px; height: 12px; stroke: var(--gold); fill: none; }
-.hero-card span { color: #d0e0ec; }
-
-/* ============================================================
-   ОБЩИЕ СЕКЦИИ
-   ============================================================ */
 
 section { padding: 80px 24px; }
 
