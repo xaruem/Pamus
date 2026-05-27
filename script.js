@@ -182,6 +182,22 @@ const translations = {
 
 let currentLang = 'ru';
 
+// ===== PHONE INPUT LIMIT (max 12 digits) =====
+function limitPhoneInput(input) {
+  let value = input.value.replace(/[^\d+]/g, '');
+  
+  if (value.startsWith('+998')) {
+    value = '+998' + value.slice(4).substring(0, 9);
+  } else if (value.startsWith('+')) {
+    value = '+' + value.slice(1).substring(0, 11);
+  } else {
+    value = value.substring(0, 12);
+  }
+  
+  input.value = value;
+}
+
+// ===== LANGUAGE SWITCHER =====
 function setLang(lang) {
   currentLang = lang;
   const t = translations[lang];
@@ -205,6 +221,7 @@ function setLang(lang) {
   });
 
   document.documentElement.lang = lang;
+  localStorage.setItem('site-lang', lang);
 
   // Close mobile menu after language switch
   closeMobileMenu();
@@ -339,3 +356,27 @@ async function sendToTelegram() {
     submitBtn.disabled = false;
   }
 }
+
+// ===== INITIALIZE ON PAGE LOAD =====
+document.addEventListener('DOMContentLoaded', function() {
+  // Set default language
+  const savedLang = localStorage.getItem('site-lang') || 'ru';
+  setLang(savedLang);
+  
+  // Add listeners to all phone inputs
+  const phoneInputs = document.querySelectorAll('input[type="tel"], input[id*="phone"], input[id*="f-phone"], input[id*="fphone"], input[placeholder*="998"]');
+  phoneInputs.forEach(input => {
+    input.addEventListener('input', function() {
+      limitPhoneInput(this);
+    });
+  });
+  
+  // Add FAQ toggle listeners
+  document.querySelectorAll('.faq-question, .faq-q, [onclick*="toggleFaq"]').forEach(btn => {
+    if (!btn.hasAttribute('onclick')) {
+      btn.addEventListener('click', function() {
+        toggleFaq(this);
+      });
+    }
+  });
+});
